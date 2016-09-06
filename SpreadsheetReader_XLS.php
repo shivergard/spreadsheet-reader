@@ -63,12 +63,12 @@
 				throw new Exception('SpreadsheetReader_XLS: File not readable ('.$Filepath.')');
 			}
 
-			if (!class_exists('Spreadsheet_Excel_Reader'))
+			if (!class_exists('Spreadsheet_Excel_Reader_Class'))
 			{
 				throw new Exception('SpreadsheetReader_XLS: Spreadsheet_Excel_Reader class not available');
 			}
 
-			$this -> Handle = new Spreadsheet_Excel_Reader($Filepath, false, 'UTF-8');
+			$this -> Handle = new Spreadsheet_Excel_Reader_Class($Filepath, false, 'UTF-8');
 
 			if (function_exists('mb_convert_encoding'))
 			{
